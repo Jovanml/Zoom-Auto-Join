@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Diagnostics;
-using IronPython.Hosting;
 
 namespace ZoomAutoJoinManager
 {   
@@ -116,7 +115,9 @@ namespace ZoomAutoJoinManager
 
             if (!isrunning)
             {
-                psi.FileName = "C:\\Users\\Jovan\\Documents\\DevProjects\\PythonProjects\\Zoom Auto Join\\dist\\join\\join";
+                string fileName = "join.exe";
+                string path = System.IO.Path.Combine(Environment.CurrentDirectory, @"dist\join\", fileName);
+                psi.FileName = path;
                 psi.UseShellExecute = false;
                 psi.RedirectStandardError = true;
                 psi.RedirectStandardOutput = true;

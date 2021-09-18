@@ -216,9 +216,7 @@ namespace ZoomAutoJoinManager
             // 
             // automatebtn
             // 
-            this.automatebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.automatebtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.automatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
             this.automatebtn.FlatAppearance.BorderSize = 0;
             this.automatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
