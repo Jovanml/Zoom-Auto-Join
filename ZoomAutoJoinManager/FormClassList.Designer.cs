@@ -31,192 +31,223 @@ namespace ZoomAutoJoinManager
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.newbtn = new System.Windows.Forms.Button();
+            this.ClassListDataGridView = new System.Windows.Forms.DataGridView();
+            this.classname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meetingid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meetingpasscode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.starttime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dayofweek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.ClassListDataGridView)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // newbtn
             // 
-            this.button1.Location = new System.Drawing.Point(3, 28);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "New";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.newbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            this.newbtn.FlatAppearance.BorderSize = 0;
+            this.newbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.newbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newbtn.ForeColor = System.Drawing.Color.White;
+            this.newbtn.Location = new System.Drawing.Point(36, 18);
+            this.newbtn.Name = "newbtn";
+            this.newbtn.Size = new System.Drawing.Size(120, 38);
+            this.newbtn.TabIndex = 0;
+            this.newbtn.Text = "New Class";
+            this.newbtn.UseVisualStyleBackColor = false;
+            this.newbtn.Click += new System.EventHandler(this.button1_Click);
             // 
-            // txtSearch
+            // ClassListDataGridView
             // 
-            this.txtSearch.Location = new System.Drawing.Point(580, 38);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(153, 20);
-            this.txtSearch.TabIndex = 1;
+            this.ClassListDataGridView.AllowUserToAddRows = false;
+            this.ClassListDataGridView.AllowUserToDeleteRows = false;
+            this.ClassListDataGridView.AllowUserToResizeColumns = false;
+            this.ClassListDataGridView.AllowUserToResizeRows = false;
+            this.ClassListDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ClassListDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ClassListDataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.ClassListDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ClassListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ClassListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.classname,
+            this.meetingid,
+            this.meetingpasscode,
+            this.studentname,
+            this.starttime,
+            this.endtime,
+            this.dayofweek,
+            this.edit,
+            this.delete});
+            this.ClassListDataGridView.GridColor = System.Drawing.Color.White;
+            this.ClassListDataGridView.Location = new System.Drawing.Point(36, 74);
+            this.ClassListDataGridView.MultiSelect = false;
+            this.ClassListDataGridView.Name = "ClassListDataGridView";
+            this.ClassListDataGridView.ReadOnly = true;
+            this.ClassListDataGridView.RowHeadersVisible = false;
+            this.ClassListDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.ClassListDataGridView.ShowEditingIcon = false;
+            this.ClassListDataGridView.Size = new System.Drawing.Size(1082, 406);
+            this.ClassListDataGridView.TabIndex = 0;
+            this.ClassListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClassListDataGridView_CellContentClick);
             // 
-            // button2
+            // classname
             // 
-            this.button2.Location = new System.Drawing.Point(129, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 38);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Refresh";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.classname.HeaderText = "Class Name";
+            this.classname.Name = "classname";
+            this.classname.ReadOnly = true;
             // 
-            // dataGridView1
+            // meetingid
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(672, 149);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.meetingid.HeaderText = "Meeting ID";
+            this.meetingid.Name = "meetingid";
+            this.meetingid.ReadOnly = true;
             // 
-            // Column1
+            // meetingpasscode
             // 
-            this.Column1.FillWeight = 54.70953F;
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.meetingpasscode.HeaderText = "Meeting Passcode";
+            this.meetingpasscode.Name = "meetingpasscode";
+            this.meetingpasscode.ReadOnly = true;
             // 
-            // Column2
+            // studentname
             // 
-            this.Column2.FillWeight = 507.6142F;
-            this.Column2.HeaderText = "Class Name";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.studentname.HeaderText = "Student Name";
+            this.studentname.Name = "studentname";
+            this.studentname.ReadOnly = true;
             // 
-            // Column3
+            // starttime
             // 
-            this.Column3.FillWeight = 54.70953F;
-            this.Column3.HeaderText = "Meeting ID";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.starttime.HeaderText = "Start Time";
+            this.starttime.Name = "starttime";
+            this.starttime.ReadOnly = true;
             // 
-            // Column4
+            // endtime
             // 
-            this.Column4.FillWeight = 54.70953F;
-            this.Column4.HeaderText = "Meeting Passcode";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.endtime.HeaderText = "End Time";
+            this.endtime.Name = "endtime";
+            this.endtime.ReadOnly = true;
             // 
-            // Column5
+            // dayofweek
             // 
-            this.Column5.FillWeight = 54.70953F;
-            this.Column5.HeaderText = "Display Name";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
+            this.dayofweek.HeaderText = "Day of Week";
+            this.dayofweek.Name = "dayofweek";
+            this.dayofweek.ReadOnly = true;
             // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 54.70953F;
-            this.Column6.HeaderText = "Start Time";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 54.70953F;
-            this.Column7.HeaderText = "End Time";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 54.70953F;
-            this.Column8.HeaderText = "Day of Week";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
+            // edit
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Column9.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column9.FillWeight = 54.70953F;
-            this.Column9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column9.HeaderText = "";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
+            this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.edit.HeaderText = "";
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.edit.Text = "Edit";
+            this.edit.UseColumnTextForButtonValue = true;
             // 
-            // Column10
+            // delete
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column10.FillWeight = 54.70953F;
-            this.Column10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column10.HeaderText = "";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
+            this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.delete.HeaderText = "";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.delete.Text = "Delete";
+            this.delete.UseColumnTextForButtonValue = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1239, 132);
+            this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(37, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 21);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Class Manager";
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.ClassListDataGridView);
+            this.panel2.Controls.Add(this.newbtn);
+            this.panel2.Location = new System.Drawing.Point(41, 155);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1155, 495);
+            this.panel2.TabIndex = 0;
             // 
             // FormClassList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 464);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1239, 662);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "FormClassList";
-            this.Text = "FormClassList";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Class Manager";
+            this.Load += new System.EventHandler(this.FormClassList_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ClassListDataGridView)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewButtonColumn Column9;
-        private System.Windows.Forms.DataGridViewButtonColumn Column10;
+        private System.Windows.Forms.Button newbtn;
+        private System.Windows.Forms.DataGridView ClassListDataGridView;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn classname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meetingid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn meetingpasscode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn studentname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn starttime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endtime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dayofweek;
+        private System.Windows.Forms.DataGridViewButtonColumn edit;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }
 

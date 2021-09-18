@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using System.Diagnostics;
+using IronPython.Hosting;
 
 namespace ZoomAutoJoinManager
-{
+{   
     public partial class FormClassList : Form
     {
+        MySqlConnection con = new MySqlConnection("host=localhost;user=root;password=mclejova372;database=zoomdb;");
         public FormClassList()
         {
             InitializeComponent();
@@ -19,17 +23,92 @@ namespace ZoomAutoJoinManager
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AddEditClass addclass = new AddEditClass();
+            addclass.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void FormClassList_Load(object sender, EventArgs e)
         {
-
+           showClassView();        
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ClassListDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.RowIndex >= 0)
+            {
+                if(e.ColumnIndex == 7 )
+                {
+                    AddEditClass editclass = new AddEditClass();
+                    DataGridViewRow row = ClassListDataGridView.Rows[e.RowIndex];
+                    editclass.populateFields(row);
+                    editclass.ShowDialog();
+                }
+
+                if (e.ColumnIndex == 8)
+                {
+                    deleteClass(e.RowIndex);
+                }
+            }
+        }
+
+        public void showClassView()
+        {
+            ClassListDataGridView.Rows.Clear();
+            
+            MySqlCommand cmd = new MySqlCommand("SELECT * from classes", con);
+            try
+            {
+                con.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    int rowId = ClassListDataGridView.Rows.Add();
+                    DataGridViewRow row = ClassListDataGridView.Rows[rowId];
+
+                    // Add the data
+                    row.Cells["classname"].Value = reader["classname"].ToString(); row.Cells["meetingid"].Value = reader["meetingid"].ToString();
+                    row.Cells["meetingpasscode"].Value = reader["meetingpasscode"].ToString(); row.Cells["studentname"].Value = reader["studentname"].ToString();
+                    row.Cells["starttime"].Value = reader["starttime"].ToString(); row.Cells["endtime"].Value = reader["endtime"].ToString();
+                    row.Cells["dayofweek"].Value = reader["dayofweek"].ToString();
+
+                }
+                reader.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        private void deleteClass(int rowI)
+        {
+            try
+            {
+                con.Open();
+
+                DataGridViewRow row = ClassListDataGridView.Rows[rowI];
+                String query = "DELETE FROM classes where classname = \"" + row.Cells["classname"].Value.ToString() + "\"";
+                MySqlCommand cmd = new MySqlCommand(query, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                con.Close();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            showClassView();
 
         }
+
     }
+
+    
 }
+
