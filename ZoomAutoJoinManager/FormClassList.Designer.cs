@@ -29,8 +29,8 @@ namespace ZoomAutoJoinManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.newbtn = new System.Windows.Forms.Button();
             this.ClassListDataGridView = new System.Windows.Forms.DataGridView();
             this.classname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +45,7 @@ namespace ZoomAutoJoinManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.automatebtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClassListDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -96,7 +97,7 @@ namespace ZoomAutoJoinManager
             this.ClassListDataGridView.RowHeadersVisible = false;
             this.ClassListDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.ClassListDataGridView.ShowEditingIcon = false;
-            this.ClassListDataGridView.Size = new System.Drawing.Size(1082, 406);
+            this.ClassListDataGridView.Size = new System.Drawing.Size(1082, 346);
             this.ClassListDataGridView.TabIndex = 0;
             this.ClassListDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClassListDataGridView_CellContentClick);
             // 
@@ -144,13 +145,13 @@ namespace ZoomAutoJoinManager
             // 
             // edit
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
@@ -162,13 +163,13 @@ namespace ZoomAutoJoinManager
             // 
             // delete
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle4;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
@@ -205,12 +206,31 @@ namespace ZoomAutoJoinManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.automatebtn);
             this.panel2.Controls.Add(this.ClassListDataGridView);
             this.panel2.Controls.Add(this.newbtn);
             this.panel2.Location = new System.Drawing.Point(41, 155);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1155, 495);
             this.panel2.TabIndex = 0;
+            // 
+            // automatebtn
+            // 
+            this.automatebtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.automatebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            this.automatebtn.FlatAppearance.BorderSize = 0;
+            this.automatebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.automatebtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.automatebtn.ForeColor = System.Drawing.Color.White;
+            this.automatebtn.Location = new System.Drawing.Point(513, 438);
+            this.automatebtn.Name = "automatebtn";
+            this.automatebtn.Size = new System.Drawing.Size(120, 38);
+            this.automatebtn.TabIndex = 1;
+            this.automatebtn.Text = "Start Automation";
+            this.automatebtn.UseVisualStyleBackColor = false;
+            this.automatebtn.Click += new System.EventHandler(this.automatebtn_Click);
             // 
             // FormClassList
             // 
@@ -248,6 +268,7 @@ namespace ZoomAutoJoinManager
         private System.Windows.Forms.DataGridViewTextBoxColumn dayofweek;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.Button automatebtn;
     }
 }
 

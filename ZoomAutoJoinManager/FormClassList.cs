@@ -13,9 +13,11 @@ using IronPython.Hosting;
 
 namespace ZoomAutoJoinManager
 {   
+
     public partial class FormClassList : Form
     {
         MySqlConnection con = new MySqlConnection("host=localhost;user=root;password=mclejova372;database=zoomdb;");
+        public bool isrunning = false;
         public FormClassList()
         {
             InitializeComponent();
@@ -107,6 +109,48 @@ namespace ZoomAutoJoinManager
 
         }
 
+        private void automatebtn_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo psi = new ProcessStartInfo();
+            int pid = 0;
+
+            if (!isrunning)
+            {
+                psi.FileName = "C:\\Users\\Jovan\\Documents\\DevProjects\\PythonProjects\\Zoom Auto Join\\dist\\join\\join";
+                psi.UseShellExecute = false;
+                psi.RedirectStandardError = true;
+                psi.RedirectStandardOutput = true;
+                psi.Arguments = "";
+                psi.CreateNoWindow = true;
+                Process proc = new Process();
+                proc.StartInfo = psi;
+                proc.Start();
+                pid = proc.Id;
+
+                automatebtn.BackColor = Color.FromArgb(219, 88, 96);
+                automatebtn.Text = "Stop Automation";
+                isrunning = true;
+
+            }
+            else
+            {
+                automatebtn.BackColor = Color.FromArgb(48, 209, 184);
+                automatebtn.Text = "Start Automation";
+                isrunning = false;
+
+                if (pid == 0)
+                {
+                    return;
+                }
+                else
+                {
+                    Process proc = Process.GetProcessById(pid);
+                    proc.Kill();
+                }
+                
+                
+            }
+        }
     }
 
     
