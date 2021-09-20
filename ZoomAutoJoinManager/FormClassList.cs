@@ -38,7 +38,7 @@ namespace ZoomAutoJoinManager
         {
             if(e.RowIndex >= 0)
             {
-                if(e.ColumnIndex == 7 )
+                if(e.ColumnIndex == 8 )
                 {
                     AddEditClass editclass = new AddEditClass();
                     DataGridViewRow row = ClassListDataGridView.Rows[e.RowIndex];
@@ -46,7 +46,7 @@ namespace ZoomAutoJoinManager
                     editclass.ShowDialog();
                 }
 
-                if (e.ColumnIndex == 8)
+                if (e.ColumnIndex == 9)
                 {
                     deleteClass(e.RowIndex);
                 }
@@ -72,7 +72,7 @@ namespace ZoomAutoJoinManager
                     row.Cells["classname"].Value = reader["classname"].ToString(); row.Cells["meetingid"].Value = reader["meetingid"].ToString();
                     row.Cells["meetingpasscode"].Value = reader["meetingpasscode"].ToString(); row.Cells["studentname"].Value = reader["studentname"].ToString();
                     row.Cells["starttime"].Value = reader["starttime"].ToString(); row.Cells["endtime"].Value = reader["endtime"].ToString();
-                    row.Cells["dayofweek"].Value = reader["dayofweek"].ToString();
+                    row.Cells["dayofweek"].Value = reader["dayofweek"].ToString(); row.Cells["duration"].Value = reader["duration"].ToString();
 
                 }
                 reader.Close();
@@ -148,9 +148,13 @@ namespace ZoomAutoJoinManager
                     Process proc = Process.GetProcessById(pid);
                     proc.Kill();
                 }
-                
-                
+                           
             }
+        }
+
+        private void refreshbtn_Click(object sender, EventArgs e)
+        {
+            showClassView();
         }
     }
 

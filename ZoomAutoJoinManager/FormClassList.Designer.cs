@@ -29,8 +29,8 @@ namespace ZoomAutoJoinManager
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.newbtn = new System.Windows.Forms.Button();
             this.ClassListDataGridView = new System.Windows.Forms.DataGridView();
             this.classname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,12 +40,14 @@ namespace ZoomAutoJoinManager
             this.starttime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.endtime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dayofweek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.automatebtn = new System.Windows.Forms.Button();
+            this.refreshbtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ClassListDataGridView)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -87,6 +89,7 @@ namespace ZoomAutoJoinManager
             this.starttime,
             this.endtime,
             this.dayofweek,
+            this.duration,
             this.edit,
             this.delete});
             this.ClassListDataGridView.GridColor = System.Drawing.Color.White;
@@ -143,15 +146,21 @@ namespace ZoomAutoJoinManager
             this.dayofweek.Name = "dayofweek";
             this.dayofweek.ReadOnly = true;
             // 
+            // duration
+            // 
+            this.duration.HeaderText = "Duration";
+            this.duration.Name = "duration";
+            this.duration.ReadOnly = true;
+            // 
             // edit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.edit.DefaultCellStyle = dataGridViewCellStyle1;
             this.edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
@@ -163,13 +172,13 @@ namespace ZoomAutoJoinManager
             // 
             // delete
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            this.delete.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(88)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.delete.DefaultCellStyle = dataGridViewCellStyle2;
             this.delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
@@ -206,6 +215,7 @@ namespace ZoomAutoJoinManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.refreshbtn);
             this.panel2.Controls.Add(this.automatebtn);
             this.panel2.Controls.Add(this.ClassListDataGridView);
             this.panel2.Controls.Add(this.newbtn);
@@ -229,6 +239,21 @@ namespace ZoomAutoJoinManager
             this.automatebtn.Text = "Start Automation";
             this.automatebtn.UseVisualStyleBackColor = false;
             this.automatebtn.Click += new System.EventHandler(this.automatebtn_Click);
+            // 
+            // refreshbtn
+            // 
+            this.refreshbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(209)))), ((int)(((byte)(184)))));
+            this.refreshbtn.FlatAppearance.BorderSize = 0;
+            this.refreshbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refreshbtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refreshbtn.ForeColor = System.Drawing.Color.White;
+            this.refreshbtn.Location = new System.Drawing.Point(171, 18);
+            this.refreshbtn.Name = "refreshbtn";
+            this.refreshbtn.Size = new System.Drawing.Size(67, 38);
+            this.refreshbtn.TabIndex = 2;
+            this.refreshbtn.Text = "Refresh";
+            this.refreshbtn.UseVisualStyleBackColor = false;
+            this.refreshbtn.Click += new System.EventHandler(this.refreshbtn_Click);
             // 
             // FormClassList
             // 
@@ -257,6 +282,7 @@ namespace ZoomAutoJoinManager
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button automatebtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn classname;
         private System.Windows.Forms.DataGridViewTextBoxColumn meetingid;
         private System.Windows.Forms.DataGridViewTextBoxColumn meetingpasscode;
@@ -264,9 +290,10 @@ namespace ZoomAutoJoinManager
         private System.Windows.Forms.DataGridViewTextBoxColumn starttime;
         private System.Windows.Forms.DataGridViewTextBoxColumn endtime;
         private System.Windows.Forms.DataGridViewTextBoxColumn dayofweek;
+        private System.Windows.Forms.DataGridViewTextBoxColumn duration;
         private System.Windows.Forms.DataGridViewButtonColumn edit;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
-        private System.Windows.Forms.Button automatebtn;
+        private System.Windows.Forms.Button refreshbtn;
     }
 }
 

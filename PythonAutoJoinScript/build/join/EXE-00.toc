@@ -1,4 +1,5 @@
-('C:\\Users\\Jovan\\source\\repos\\ZoomAutoJoinManager\\AutoJoinProcess\\build\\join\\join.exe',
+('C:\\Users\\Jovan\\Documents\\DevProjects\\PythonProjects\\Zoom Auto '
+ 'Join\\build\\join\\join.exe',
  True,
  False,
  True,
@@ -13,7 +14,8 @@
  None,
  'join.pkg',
  [('PYZ-00.pyz',
-   'C:\\Users\\Jovan\\source\\repos\\ZoomAutoJoinManager\\AutoJoinProcess\\build\\join\\PYZ-00.pyz',
+   'C:\\Users\\Jovan\\Documents\\DevProjects\\PythonProjects\\Zoom Auto '
+   'Join\\build\\join\\PYZ-00.pyz',
    'PYZ'),
   ('struct',
    'C:\\Users\\Jovan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\struct.pyo',
@@ -46,15 +48,17 @@
    'C:\\Users\\Jovan\\AppData\\Local\\Programs\\Python\\Python39\\Lib\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth__tkinter.py',
    'PYSOURCE'),
   ('join',
-   'C:\\Users\\Jovan\\source\\repos\\ZoomAutoJoinManager\\AutoJoinProcess\\join.py',
+   'C:\\Users\\Jovan\\Documents\\DevProjects\\PythonProjects\\Zoom Auto '
+   'Join\\join.py',
    'PYSOURCE'),
   ('join.exe.manifest',
-   'C:\\Users\\Jovan\\source\\repos\\ZoomAutoJoinManager\\AutoJoinProcess\\build\\join\\join.exe.manifest',
+   'C:\\Users\\Jovan\\Documents\\DevProjects\\PythonProjects\\Zoom Auto '
+   'Join\\build\\join\\join.exe.manifest',
    'BINARY')],
  [],
  False,
  False,
- 1631994254,
+ 1632170852,
  [('run.exe',
    'C:\\Users\\Jovan\\AppData\\Local\\Programs\\Python\\Python39\\lib\\site-packages\\PyInstaller\\bootloader\\Windows-64bit\\run.exe',
    'EXECUTABLE')])

@@ -47,6 +47,8 @@ namespace ZoomAutoJoinManager
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label = new System.Windows.Forms.Label();
+            this.txtDuration = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +172,7 @@ namespace ZoomAutoJoinManager
             this.savebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.savebtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.savebtn.ForeColor = System.Drawing.Color.White;
-            this.savebtn.Location = new System.Drawing.Point(42, 390);
+            this.savebtn.Location = new System.Drawing.Point(42, 430);
             this.savebtn.Name = "savebtn";
             this.savebtn.Size = new System.Drawing.Size(84, 28);
             this.savebtn.TabIndex = 19;
@@ -205,6 +207,8 @@ namespace ZoomAutoJoinManager
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label);
+            this.panel2.Controls.Add(this.txtDuration);
             this.panel2.Controls.Add(this.txtStartTime);
             this.panel2.Controls.Add(this.txtClassName);
             this.panel2.Controls.Add(this.savebtn);
@@ -222,8 +226,24 @@ namespace ZoomAutoJoinManager
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(41, 143);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(432, 461);
+            this.panel2.Size = new System.Drawing.Size(432, 477);
             this.panel2.TabIndex = 21;
+            // 
+            // label
+            // 
+            this.label.AutoSize = true;
+            this.label.Location = new System.Drawing.Point(39, 379);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(78, 13);
+            this.label.TabIndex = 21;
+            this.label.Text = "Duration ( min )";
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.Location = new System.Drawing.Point(42, 395);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(297, 20);
+            this.txtDuration.TabIndex = 20;
             // 
             // AddEditClass
             // 
@@ -264,5 +284,7 @@ namespace ZoomAutoJoinManager
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox txtDuration;
     }
 }
