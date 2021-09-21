@@ -36,8 +36,8 @@ mycursor = mydb.cursor(buffered=True)
 mycursor.execute("SELECT meetingid,meetingpasscode,starttime, endtime, dayofweek, duration FROM classes")
 myresult = mycursor.fetchall()
 
+id,passcode,start,end,day, dur = ([] for i in range(6))
 for row in myresult:
-    id,passcode,start,end,day, dur = ([] for i in range(6))
     id.append(row[0])
     passcode.append(row[1])
     start.append(row[2])
@@ -46,13 +46,12 @@ for row in myresult:
     dur.append(row[5])
     
 # wait for class start
-
 while True:
-    for i in range(len(start)):
+    for i in range(len(id)):
         if(calendar.day_name[datetime.now().weekday()][0:3] == day[i] and ((int(datetime.now().hour) > int(start[i].split(':')[0]) or (int(datetime.now().hour) 
         == int(start[i].split(':')[0]) and int(datetime.now().minute) >= int(start[i].split(':')[1]))) and (int(datetime.now().hour) < int(end[i].split(':')[0]) or 
         (int(datetime.now().hour) == int(end[i].split(':')[0]) and int(datetime.now().minute) < int(end[i].split(':')[1]))))):
-
+            
             startClass(id[i],passcode[i])  
             time.sleep(int(dur[i]) * 60)
 
